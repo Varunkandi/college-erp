@@ -12,13 +12,7 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 # DATABASE CONNECTION
 # ======================
 def get_db():
-    return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="varun123",
-        database="college_erp"
-    )
-
+    return None
 # ======================
 # HOME
 # ======================
@@ -31,19 +25,18 @@ def home():
 # ======================
 @app.route("/login", methods=["POST"])
 def login():
-    db = get_db()
     data = request.json
-    cursor = db.cursor(dictionary=True)
 
-    cursor.execute(
-        "SELECT id, username, role FROM users WHERE username=%s AND password=%s",
-        (data["username"], data["password"])
-    )
+    # temporary login without database
+    if data["username"] == "admin" and data["password"] == "admin":
+        return jsonify({
+            "id": 1,
+            "username": "admin",
+            "role": "admin",
+            "name": "Admin User"
+        })
 
-    user = cursor.fetchone()
-    db.close()
-    return jsonify(user)
-
+    return jsonify({"error": "Invalid login"}), 401
 
 # ======================
 # ADD STUDENT
