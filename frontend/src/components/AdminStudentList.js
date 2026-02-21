@@ -8,7 +8,7 @@ function AdminStudentList() {
 
   // Load all students
   useEffect(() => {
-    fetch("https://college-erp-backend-3q8r.onrender.com/all_students")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/all_students")
       .then(res => res.json())
       .then(data => setStudents(data))
       .catch(() => alert("Failed to load students"));
@@ -20,7 +20,7 @@ function AdminStudentList() {
 
   try {
     const res = await fetch(
-      `https://college-erp-backend-3q8r.onrender.com/delete_student/${userId}`,
+      `https://college-erp-backend-3q8r.onrender.com/login/delete_student/${userId}`,
       { method: "DELETE" }
     );
 

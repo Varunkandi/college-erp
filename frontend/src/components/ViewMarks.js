@@ -6,7 +6,7 @@ function ViewMarks() {
   const [marks, setMarks] = useState([]);
 
   useEffect(() => {
-    fetch("https://college-erp-backend-3q8r.onrender.com/marks/" + userId)
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/marks/" + userId)
       .then(res => res.json())
       .then(data => setMarks(data))
       .catch(() => alert("Failed to load marks"));

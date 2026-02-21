@@ -5,7 +5,7 @@ function EventsViewer() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch("https://college-erp-backend-3q8r.onrender.com/events")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/events")
       .then(res => res.json())
       .then(data => setEvents(data));
   }, []);
@@ -25,7 +25,7 @@ function EventsViewer() {
 
             {e.file && (
               <a
-                href={`https://college-erp-backend-3q8r.onrender.com/uploads/${e.file}`}
+                href={`https://college-erp-backend-3q8r.onrender.com/login/uploads/${e.file}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

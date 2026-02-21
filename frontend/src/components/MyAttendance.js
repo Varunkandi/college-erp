@@ -12,7 +12,7 @@ function MyAttendance() {
   const [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
-    fetch(`https://college-erp-backend-3q8r.onrender.com/student_attendance_report/${userId}`)
+    fetch(`https://college-erp-backend-3q8r.onrender.com/login/student_attendance_report/${userId}`)
       .then(res => res.json())
       .then(data => {
         const map = {};

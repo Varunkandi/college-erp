@@ -4,7 +4,7 @@ function AnnouncementBar() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("https://college-erp-backend-3q8r.onrender.com/announcements")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/announcements")
       .then(res => res.json())
       .then(data => setItems(data))
       .catch(()=>{});

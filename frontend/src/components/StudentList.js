@@ -7,7 +7,7 @@ function StudentList(){
   const [search,setSearch]=useState("");
 
   useEffect(()=>{
-    fetch("https://college-erp-backend-3q8r.onrender.com/all_students")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/all_students")
       .then(res=>res.json())
       .then(data=>setStudents(data));
   },[])

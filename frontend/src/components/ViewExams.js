@@ -6,7 +6,7 @@ function ViewExams(){
   const [exams,setExams]=useState([]);
 
   useEffect(()=>{
-    fetch("https://college-erp-backend-3q8r.onrender.com/exams")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/exams")
       .then(res=>res.json())
       .then(data=>setExams(data));
   },[]);

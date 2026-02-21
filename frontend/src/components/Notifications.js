@@ -10,7 +10,7 @@ function Notifications() {
 
   // Load notifications
   useEffect(() => {
-    fetch(`https://college-erp-backend-3q8r.onrender.com/notifications/${role}`)
+    fetch(`https://college-erp-backend-3q8r.onrender.com/login/notifications/${role}`)
       .then(res => res.json())
       .then(data => setNotes(data));
   }, [role]);
@@ -22,7 +22,7 @@ function Notifications() {
       return;
     }
 
-    fetch("https://college-erp-backend-3q8r.onrender.com/add_notification", {
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/add_notification", {
       method: "POST",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({

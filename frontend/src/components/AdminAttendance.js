@@ -9,7 +9,7 @@ function AdminAttendance() {
   const [records, setRecords] = useState({});
 
   useEffect(() => {
-    fetch("https://college-erp-backend-3q8r.onrender.com/student_list")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/student_list")
       .then(res => res.json())
       .then(data => setStudents(data));
   }, []);
@@ -45,7 +45,7 @@ function AdminAttendance() {
       });
     });
 
-    fetch("https://college-erp-backend-3q8r.onrender.com/admin_add_attendance", {
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/admin_add_attendance", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ date, records: payload })

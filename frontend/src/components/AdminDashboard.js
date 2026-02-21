@@ -10,7 +10,7 @@ function AdminDashboard() {
   });
 
   useEffect(() => {
-    fetch("https://college-erp-backend-3q8r.onrender.com/counts")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/counts")
       .then(res => res.json())
       .then(data => setCounts(data))
       .catch(()=>{});

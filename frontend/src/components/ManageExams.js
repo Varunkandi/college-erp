@@ -11,14 +11,14 @@ function ManageExams(){
 
   // load exams
   useEffect(()=>{
-    fetch("https://college-erp-backend-3q8r.onrender.com/exams")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/exams")
       .then(res=>res.json())
       .then(data=>setExams(data));
   },[]);
 
   // add exam
   const addExam=()=>{
-    fetch("https://college-erp-backend-3q8r.onrender.com/add_exam",{
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/add_exam",{
       method:"POST",
       headers:{ "Content-Type":"application/json"},
       body:JSON.stringify({
@@ -36,7 +36,7 @@ function ManageExams(){
 
   // delete exam
   const remove=(id)=>{
-    fetch("https://college-erp-backend-3q8r.onrender.com/delete_exam/"+id,{
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/delete_exam/"+id,{
       method:"DELETE"
     })
     .then(res=>res.json())

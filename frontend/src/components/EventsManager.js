@@ -18,7 +18,7 @@ function EventsManager() {
   }, []);
 
   const loadEvents = () => {
-    fetch("https://college-erp-backend-3q8r.onrender.com/events")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/events")
       .then(res => res.json())
       .then(data => setEvents(data))
       .catch(() => alert("Failed to load events"));
@@ -41,7 +41,7 @@ function EventsManager() {
 
     if (file) formData.append("file", file);
 
-    fetch("https://college-erp-backend-3q8r.onrender.com/add_event", {
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/add_event", {
       method: "POST",
       body: formData
     })
@@ -61,7 +61,7 @@ function EventsManager() {
   const deleteEvent = (id) => {
     if (!window.confirm("Delete this event?")) return;
 
-    fetch(`https://college-erp-backend-3q8r.onrender.com/delete_event/${id}`, {
+    fetch(`https://college-erp-backend-3q8r.onrender.com/login/delete_event/${id}`, {
       method: "DELETE"
     })
       .then(res => res.json())
@@ -130,7 +130,7 @@ function EventsManager() {
                 <td>
                   {e.file && (
                     <a
-                      href={`https://college-erp-backend-3q8r.onrender.com/uploads/${e.file}`}
+                      href={`https://college-erp-backend-3q8r.onrender.com/login/uploads/${e.file}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

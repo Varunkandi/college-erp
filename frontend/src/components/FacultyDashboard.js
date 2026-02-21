@@ -7,7 +7,7 @@ function FacultyDashboard(){
   const [count,setCount]=useState(0);
 
   useEffect(()=>{
-    fetch("https://college-erp-backend-3q8r.onrender.com/counts")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/counts")
       .then(res=>res.json())
       .then(data=>setCount(data.students))
       .catch(()=>{});

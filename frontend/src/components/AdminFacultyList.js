@@ -5,7 +5,7 @@ function AdminFacultyList() {
   const [faculty, setFaculty] = useState([]);
 
   useEffect(() => {
-    fetch("https://college-erp-backend-3q8r.onrender.com/all_faculty")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/all_faculty")
       .then(res => res.json())
       .then(data => setFaculty(data));
   }, []);
@@ -15,7 +15,7 @@ function AdminFacultyList() {
 
     try {
       const res = await fetch(
-        `https://college-erp-backend-3q8r.onrender.com/delete_faculty/${userId}`,
+        `https://college-erp-backend-3q8r.onrender.com/login/delete_faculty/${userId}`,
         { method: "DELETE" }
       );
 

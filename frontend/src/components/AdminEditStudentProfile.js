@@ -11,7 +11,7 @@ function AdminEditStudentProfile() {
   useEffect(() => {
     if (!uid) return;
 
-    fetch(`https://college-erp-backend-3q8r.onrender.com/student_profile/${uid}`)
+    fetch(`https://college-erp-backend-3q8r.onrender.com/login/student_profile/${uid}`)
       .then(res => {
         if (!res.ok) throw new Error();
         return res.json();
@@ -35,7 +35,7 @@ function AdminEditStudentProfile() {
       return;
     }
 
-    fetch(`https://college-erp-backend-3q8r.onrender.com/update_student_profile/${uid}`, {
+    fetch(`https://college-erp-backend-3q8r.onrender.com/login/update_student_profile/${uid}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form)

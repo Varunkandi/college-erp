@@ -7,7 +7,7 @@ function MyMarks() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(`https://college-erp-backend-3q8r.onrender.com/marks/${userId}`)
+    fetch(`https://college-erp-backend-3q8r.onrender.com/login/marks/${userId}`)
       .then(res => {
         if (!res.ok) throw new Error("Failed to load marks");
         return res.json();

@@ -7,7 +7,7 @@ function Profile(){
   const [user,setUser]=useState({});
 
   useEffect(()=>{
-    fetch("https://college-erp-backend-3q8r.onrender.com/profile/"+userId)
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/profile/"+userId)
       .then(res=>res.json())
       .then(data=>setUser(data));
   },[])

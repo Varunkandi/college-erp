@@ -5,7 +5,7 @@ function ViewNotes() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    fetch("https://college-erp-backend-3q8r.onrender.com/notes")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/notes")
       .then(res => res.json())
       .then(data => setNotes(data));
   }, []);
@@ -31,7 +31,7 @@ function ViewNotes() {
                 <td>{n.subject}</td>
                 <td>
                   <a
-                    href={`https://college-erp-backend-3q8r.onrender.com/uploads/${n.filename}`}
+                    href={`https://college-erp-backend-3q8r.onrender.com/login/uploads/${n.filename}`}
                     target="_blank"
                     rel="noreferrer"
                   >

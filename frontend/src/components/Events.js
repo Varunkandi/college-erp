@@ -14,7 +14,7 @@ function AdminEvents() {
 
   // load all events
   useEffect(()=>{
-    fetch("https://college-erp-backend-3q8r.onrender.com/events/everyone")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/events/everyone")
       .then(res=>res.json())
       .then(data=>setEvents(data));
   },[]);
@@ -33,7 +33,7 @@ function AdminEvents() {
     formData.append("role",role);
     if(file) formData.append("file",file);
 
-    fetch("https://college-erp-backend-3q8r.onrender.com/add_event",{
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/add_event",{
       method:"POST",
       body:formData
     })
@@ -47,7 +47,7 @@ function AdminEvents() {
   const remove=(id)=>{
     if(!window.confirm("Delete event?")) return;
 
-    fetch(`https://college-erp-backend-3q8r.onrender.com/delete_event/${id}`,{
+    fetch(`https://college-erp-backend-3q8r.onrender.com/login/delete_event/${id}`,{
       method:"DELETE"
     })
     .then(res=>res.json())
@@ -107,7 +107,7 @@ function AdminEvents() {
                 <td>{e.role}</td>
                 <td>
                   {e.file &&
-                    <a href={`https://college-erp-backend-3q8r.onrender.com/uploads/${e.file}`}
+                    <a href={`https://college-erp-backend-3q8r.onrender.com/login/uploads/${e.file}`}
                        target="_blank" rel="noreferrer">
                       View
                     </a>}

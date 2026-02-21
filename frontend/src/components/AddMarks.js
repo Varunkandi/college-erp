@@ -8,7 +8,7 @@ function AddMarks() {
   const [marks, setMarks] = useState("");
 
   useEffect(() => {
-    fetch("https://college-erp-backend-3q8r.onrender.com/student_list")
+    fetch("https://college-erp-backend-3q8r.onrender.com/login/student_list")
       .then(res => res.json())
       .then(setStudents);
   }, []);
@@ -19,7 +19,7 @@ function AddMarks() {
       return;
     }
 
-    await fetch("https://college-erp-backend-3q8r.onrender.com/add_marks", {
+    await fetch("https://college-erp-backend-3q8r.onrender.com/login/add_marks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

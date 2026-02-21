@@ -7,7 +7,7 @@ function Events(){
   const [events,setEvents]=useState([]);
 
   useEffect(()=>{
-    fetch(`https://college-erp-backend-3q8r.onrender.com/events/${role}`)
+    fetch(`https://college-erp-backend-3q8r.onrender.com/login/events/${role}`)
       .then(res=>res.json())
       .then(data=>setEvents(data));
   },[role]);
@@ -30,7 +30,7 @@ function Events(){
             <p><b>Date:</b> {e.event_date}</p>
 
             {e.file &&
-              <a href={`https://college-erp-backend-3q8r.onrender.com/uploads/${e.file}`}
+              <a href={`https://college-erp-backend-3q8r.onrender.com/login/uploads/${e.file}`}
                  target="_blank" rel="noreferrer">
                 View Attachment
               </a>}
