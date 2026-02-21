@@ -6,7 +6,7 @@ function ViewFee() {
   const [fee, setFee] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/fee/" + userId)
+    fetch("https://college-erp-backend-3q8r.onrender.com/fee/" + userId)
       .then(res => res.json())
       .then(data => setFee(data))
       .catch(() => alert("Failed to load fee details"));

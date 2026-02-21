@@ -9,7 +9,7 @@ function ChangePassword(){
   const [newPass,setNewPass]=useState("");
 
   const change=()=>{
-    fetch("http://127.0.0.1:5000/change_password",{
+    fetch("https://college-erp-backend-3q8r.onrender.com/change_password",{
       method:"POST",
       headers:{ "Content-Type":"application/json"},
       body:JSON.stringify({

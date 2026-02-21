@@ -7,7 +7,7 @@ function EventsPage(){
   const [events,setEvents] = useState([]);
 
   useEffect(()=>{
-    fetch("http://127.0.0.1:5000/events")
+    fetch("https://college-erp-backend-3q8r.onrender.com/events")
       .then(res=>res.json())
       .then(data=>setEvents(data))
       .catch(()=>alert("Failed to load events"));
@@ -38,7 +38,7 @@ function EventsPage(){
               {e.file && (
                 <div style={{marginTop:10}}>
                   <a
-                    href={`http://127.0.0.1:5000/uploads/${e.file}`}
+                    href={`https://college-erp-backend-3q8r.onrender.com/uploads/${e.file}`}
                     target="_blank"
                     rel="noreferrer"
                   >

@@ -10,7 +10,7 @@ function AdminDashboard() {
   });
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/counts")
+    fetch("https://college-erp-backend-3q8r.onrender.com/counts")
       .then(res => res.json())
       .then(data => setCounts(data))
       .catch(()=>{});

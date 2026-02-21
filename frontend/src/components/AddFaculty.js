@@ -20,7 +20,7 @@ function AddFaculty() {
     }
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/add_faculty", {
+      const res = await fetch("https://college-erp-backend-3q8r.onrender.com/add_faculty", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)

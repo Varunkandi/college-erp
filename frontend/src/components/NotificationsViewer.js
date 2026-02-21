@@ -6,7 +6,7 @@ function NotificationsViewer() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/notifications/${role}`)
+    fetch(`https://college-erp-backend-3q8r.onrender.com/notifications/${role}`)
       .then(res => res.json())
       .then(data => setNotes(data));
   }, [role]);

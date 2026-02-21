@@ -4,7 +4,7 @@ function AnnouncementBar() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/announcements")
+    fetch("https://college-erp-backend-3q8r.onrender.com/announcements")
       .then(res => res.json())
       .then(data => setItems(data))
       .catch(()=>{});

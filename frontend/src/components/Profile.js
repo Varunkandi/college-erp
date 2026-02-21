@@ -7,7 +7,7 @@ function Profile(){
   const [user,setUser]=useState({});
 
   useEffect(()=>{
-    fetch("http://127.0.0.1:5000/profile/"+userId)
+    fetch("https://college-erp-backend-3q8r.onrender.com/profile/"+userId)
       .then(res=>res.json())
       .then(data=>setUser(data));
   },[])

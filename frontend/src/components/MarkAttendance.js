@@ -8,7 +8,7 @@ function MarkAttendance(){
   const [status,setStatus]=useState("Present");
 
   const submitAttendance=()=>{
-    fetch("http://127.0.0.1:5000/add_attendance",{
+    fetch("https://college-erp-backend-3q8r.onrender.com/add_attendance",{
       method:"POST",
       headers:{ "Content-Type":"application/json"},
       body:JSON.stringify({

@@ -6,7 +6,7 @@ function UpdateFee() {
   const [fee, setFee] = useState("");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/all_students")
+    fetch("https://college-erp-backend-3q8r.onrender.com/all_students")
       .then(res => res.json())
       .then(setStudents);
   }, []);
@@ -14,7 +14,7 @@ function UpdateFee() {
   const updateFee = async (uid) => {
     if (!fee) return alert("Enter fee");
 
-    const res = await fetch("http://127.0.0.1:5000/update_fee", {
+    const res = await fetch("https://college-erp-backend-3q8r.onrender.com/update_fee", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ student_id: uid, fee_due: fee })

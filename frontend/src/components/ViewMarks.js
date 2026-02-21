@@ -6,7 +6,7 @@ function ViewMarks() {
   const [marks, setMarks] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/marks/" + userId)
+    fetch("https://college-erp-backend-3q8r.onrender.com/marks/" + userId)
       .then(res => res.json())
       .then(data => setMarks(data))
       .catch(() => alert("Failed to load marks"));
