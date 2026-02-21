@@ -26,17 +26,19 @@ def home():
 @app.route("/login", methods=["POST"])
 def login():
     data = request.json
+    username = data.get("username")
+    password = data.get("password")
 
-    # temporary login without database
-    if data["username"] == "admin" and data["password"] == "admin":
+    # TEMPORARY LOGIN (NO DATABASE)
+    if username == "admin" and password == "admin":
         return jsonify({
-            "id": 1,
-            "username": "admin",
-            "role": "admin",
-            "name": "Admin User"
+            "status": "success",
+            "user": username
         })
-
-    return jsonify({"error": "Invalid login"}), 401
+    else:
+        return jsonify({
+            "status": "failed"
+        }), 401
 
 # ======================
 # ADD STUDENT
